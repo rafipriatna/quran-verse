@@ -6,7 +6,10 @@
 		"dev": "next dev --turbo",
 		"build": "next build",
 		"start": "next start",
-		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
+		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix",
+		"pages:build": "npx @cloudflare/next-on-pages",
+		"preview": "npm run pages:build && wrangler pages dev",
+		"deploy": "npm run pages:build && wrangler pages deploy"
 	},
 	"dependencies": {
 		"@nextui-org/button": "2.0.37",
@@ -34,6 +37,7 @@
 		"react-dom": "18.3.1"
 	},
 	"devDependencies": {
+		"@cloudflare/next-on-pages": "^1.13.2",
 		"@tailwindcss/typography": "^0.5.14",
 		"@types/node": "20.5.7",
 		"@types/react": "18.3.3",
